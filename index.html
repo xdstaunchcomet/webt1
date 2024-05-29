@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto de Área Técnica de Informática</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Archivo:wght@400;700&display=swap');
+        
+        :root {
+            --radius: 0.5rem;
+            --font-dm_sans: 'DM Sans', sans-serif;
+            --font-archivo: 'Archivo', sans-serif;
+            --color-primary: #c29292;
+            --color-secondary: #cd5c5c;
+            --color-background: #f0f0f0;
+            --color-text: #e27d7d;
+            --color-white: #fff;
+            --color-light-gray: #ccbcbc;
+            --color-dark-gray: #ccc;
+            --color-shadow: rgba(0, 0, 0, 0.2);
+        }
+
+        body {
+            font-family: var(--font-dm_sans), sans-serif;
+            margin: 0;
+            background-color: var(--color-background);
+            color: var(--color-text);
+            padding: 20px;
+            text-align: center;
+            background-color: linen;
+        }
+
+        header {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 20px;
+        }
+
+        h1 {
+            font-family: var(--font-archivo), sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 0;
+            padding: 1rem;
+            background-color: var(--color-white);
+            border-radius: var(--radius);
+            box-shadow: 0 8px 16px var(--color-shadow);
+            animation: fadeIn 2s ease-in-out;
+            background-color: peachpuff;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .image-container img {
+            border-radius: var(--radius);
+            max-width: 100px;
+            height: auto;
+            animation: bounceIn 2s ease-in-out;
+        }
+
+        @keyframes bounceIn {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-30px); }
+            60% { transform: translateY(-15px); }
+        }
+
+        .title-container {
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        button {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: var(--radius);
+            margin: 0 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            height: 60px;
+            border-radius: var(--radius);
+            box-shadow: 0 8px 16px var(--color-shadow);
+            font-size: 1.1em;
+        }
+
+        button:hover {
+            background-color: var(--color-secondary);
+            transform: translateY(-2px);
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--color-white);
+            border: 1px solid var(--color-dark-gray);
+            border-radius: var(--radius);
+            box-shadow: 0 8px 16px var(--color-shadow);
+            z-index: 1;
+            animation: fadeInMenu 0.3s ease-in-out;
+        }
+
+        @keyframes fadeInMenu {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .dropdown-menu a {
+            color: var(--color-text);
+            padding: 10px 20px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: var(--color-light-gray);
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        center {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        footer {
+            background-color: var(--color-footer-background);
+            color: var(--color-footer-text);
+            padding: 2rem;
+            margin-top: 3rem;
+            border-radius: var(--radius);
+            box-shadow: 0 8px 16px var(--color-shadow);
+            background-color: peachpuff;
+        }
+
+        footer h2 {
+            font-family: var(--font-archivo);
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        footer .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        footer .footer-links a {
+            color: var(--color-footer-link);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer .footer-links a:hover {
+            color: var(--color-secondary);
+        }
+
+        footer .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        footer .social-icons img {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius);
+            transition: transform 0.3s;
+        }
+
+        footer .social-icons img:hover {
+            transform: translateY(-2px);
+        }
+
+       
+
+        @keyframes horizontalSlide {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(50px); }
+            100% { transform: translateX(0); }
+        }
+
+        #qr img {
+            width: 180px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            <div class="title-container">
+                Diseño y Desarrollo Web - 1er Trimestre
+            </div>
+            <div class="image-container">
+                <img src="Video de WhatsApp 2024-05-20 a las 11.10.43_baedd96b.gif" alt="Imagen descriptiva">
+            </div>
+        </h1>
+        <nav>
+        </nav>
+    </header>
+    
+        <img src="C:\Users\Kevin\Desktop\diseño y desarrollo web\1\Brochure velas floral verde y rosa.png" width="850" alt="Tríptico">
+   
+    <footer>
+        <h2>Contacto</h2>
+        <div class="footer-links">
+            <a href="#">Política de Privacidad</a>
+            <a href="#">Términos y Condiciones</a>
+            <a href="#">Ayuda</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://twitter.com/ayudaquepongo1">
+                <img src="twitter-nuevo-logotipo-2023-x-vector-fondo-blanco_1017-45422.avif" alt="Twitter">
+            </a>
+            <a href="kevincaicedoalvarez@gmail.com">
+                <img src="logo-Gmail-1.jpg" alt="Gmail">
+            </a>
+            <a href="https://github.com/xdstaunchcomet">
+                <img src="GitHub-Mark-ea2971cee799.png" alt="GitHub">
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
+
